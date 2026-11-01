@@ -7,6 +7,11 @@ let messages = defineMessages({
         description: 'Name for the default blip sound',
         id: 'gui.defaultProject.blip'
     },
+    hello: {
+        defaultMessage: 'Hello from Snapcode!',
+        description: 'Text the default sprite says when the green flag is clicked',
+        id: 'snapcode.defaultProject.hello'
+    },
     variable: {
         defaultMessage: 'my variable',
         description: 'Name for the default variable',
@@ -70,7 +75,31 @@ const projectData = translateFunction => {
                 variables: {},
                 lists: {},
                 broadcasts: {},
-                blocks: {},
+                blocks: {
+                    snapcodeFlag: {
+                        opcode: 'event_whenflagclicked',
+                        next: 'snapcodeSay',
+                        parent: null,
+                        inputs: {},
+                        fields: {},
+                        shadow: false,
+                        topLevel: true,
+                        x: 64,
+                        y: 64
+                    },
+                    snapcodeSay: {
+                        opcode: 'looks_sayforsecs',
+                        next: null,
+                        parent: 'snapcodeFlag',
+                        inputs: {
+                            MESSAGE: [1, [10, translator(messages.hello)]],
+                            SECS: [1, [4, '2']]
+                        },
+                        fields: {},
+                        shadow: false,
+                        topLevel: false
+                    }
+                },
                 currentCostume: 0,
                 costumes: [
                     {
