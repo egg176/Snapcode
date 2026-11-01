@@ -87,8 +87,17 @@ import editIcon from './icon--edit.svg';
 import debugIcon from '../debug-modal/icons/icon--debug.svg';
 
 import snapcodeLogo from './snapcode-logo.svg';
+import {SHOW_TUTORIALS, SOURCE_URL} from '../../lib/snapcode-config.js';
 
 import sharedMessages from '../../lib/shared-messages';
+
+const snapcodeMessages = defineMessages({
+    sourceCode: {
+        defaultMessage: 'Source code',
+        description: 'Link to the Snapcode source code repository (AGPL requirement)',
+        id: 'gui.menuBar.sourceCode'
+    }
+});
 
 const ariaMessages = defineMessages({
     tutorials: {
@@ -680,21 +689,28 @@ class MenuBar extends React.Component {
                     </div>
                     <Divider className={classNames(styles.divider)} />
                     <div className={styles.fileGroup}>
-                        <div
-                            aria-label={this.props.intl.formatMessage(ariaMessages.tutorials)}
-                            className={
-                                classNames(styles.menuBarItem, styles.noOffset, styles.hoverable, 'tutorials-button')
-                            }
-                            onClick={this.props.onOpenTipLibrary}
-                        >
-                            <img
-                                className={styles.helpIcon}
-                                src={helpIcon}
-                            />
-                            <span className={styles.tutorialsLabel}>
-                                <FormattedMessage {...ariaMessages.tutorials} />
-                            </span>
-                        </div>
+                        {SHOW_TUTORIALS && (
+                            <div
+                                aria-label={this.props.intl.formatMessage(ariaMessages.tutorials)}
+                                className={
+                                    classNames(
+                                        styles.menuBarItem,
+                                        styles.noOffset,
+                                        styles.hoverable,
+                                        'tutorials-button'
+                                    )
+                                }
+                                onClick={this.props.onOpenTipLibrary}
+                            >
+                                <img
+                                    className={styles.helpIcon}
+                                    src={helpIcon}
+                                />
+                                <span className={styles.tutorialsLabel}>
+                                    <FormattedMessage {...ariaMessages.tutorials} />
+                                </span>
+                            </div>
+                        )}
                         <div
                             aria-label={this.props.intl.formatMessage(ariaMessages.debug)}
                             className={classNames(styles.menuBarItem, styles.noOffset, styles.hoverable)}
@@ -708,6 +724,15 @@ class MenuBar extends React.Component {
                                 <FormattedMessage {...ariaMessages.debug} />
                             </span>
                         </div>
+                        <a
+                            aria-label={this.props.intl.formatMessage(snapcodeMessages.sourceCode)}
+                            className={classNames(styles.menuBarItem, styles.noOffset, styles.hoverable)}
+                            href={SOURCE_URL}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <FormattedMessage {...snapcodeMessages.sourceCode} />
+                        </a>
                     </div>
                 </div>
 

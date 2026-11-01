@@ -2,10 +2,10 @@ import {defineMessages} from 'react-intl';
 import sharedMessages from '../shared-messages';
 
 let messages = defineMessages({
-    meow: {
-        defaultMessage: 'Meow',
-        description: 'Name for the meow sound',
-        id: 'gui.defaultProject.meow'
+    blip: {
+        defaultMessage: 'Blip',
+        description: 'Name for the default blip sound',
+        id: 'gui.defaultProject.blip'
     },
     variable: {
         defaultMessage: 'my variable',
@@ -74,33 +74,33 @@ const projectData = translateFunction => {
                 currentCostume: 0,
                 costumes: [
                     {
-                        assetId: 'bcf454acf82e4504149f7ffe07081dbc',
+                        assetId: '690b8b215cf4be5aad4a6f96094f9e1f',
                         name: translator(messages.costume, {index: 1}),
                         bitmapResolution: 1,
-                        md5ext: 'bcf454acf82e4504149f7ffe07081dbc.svg',
+                        md5ext: '690b8b215cf4be5aad4a6f96094f9e1f.svg',
                         dataFormat: 'svg',
                         rotationCenterX: 48,
                         rotationCenterY: 50
                     },
                     {
-                        assetId: '0fb9be3e8397c983338cb71dc84d0b25',
+                        assetId: 'dea7e05d6680a7f379a154439e3a9c49',
                         name: translator(messages.costume, {index: 2}),
                         bitmapResolution: 1,
-                        md5ext: '0fb9be3e8397c983338cb71dc84d0b25.svg',
+                        md5ext: 'dea7e05d6680a7f379a154439e3a9c49.svg',
                         dataFormat: 'svg',
-                        rotationCenterX: 46,
-                        rotationCenterY: 53
+                        rotationCenterX: 48,
+                        rotationCenterY: 50
                     }
                 ],
                 sounds: [
                     {
-                        assetId: '83c36d806dc92327b9e7049a565c6bff',
-                        name: translator(messages.meow),
+                        assetId: '2967fb2469373a037f3e41bb3f7b8632',
+                        name: translator(messages.blip),
                         dataFormat: 'wav',
                         format: '',
                         rate: 22050,
-                        sampleCount: 18688,
-                        md5ext: '83c36d806dc92327b9e7049a565c6bff.wav'
+                        sampleCount: 5512,
+                        md5ext: '2967fb2469373a037f3e41bb3f7b8632.wav'
                     }
                 ],
                 volume: 100,

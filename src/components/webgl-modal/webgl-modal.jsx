@@ -32,9 +32,9 @@ const WebGlModal = ({intl, ...props}) => (
                 <p>
                     { /* eslint-disable max-len */ }
                     <FormattedMessage
-                        defaultMessage="Unfortunately it looks like your browser or computer {webGlLink}. This technology is needed for Scratch 3.0 to run."
+                        defaultMessage="Unfortunately it looks like your browser or computer {webGlLink}. This technology is needed for Snapcode to run."
                         description="WebGL missing message"
-                        id="gui.webglModal.description"
+                        id="snapcode.webglModal.description"
                         values={{
                             webGlLink: (
                                 <a
@@ -66,27 +66,6 @@ const WebGlModal = ({intl, ...props}) => (
                     </button>
 
                 </Box>
-                <div className={styles.faqLinkText}>
-                    <FormattedMessage
-                        defaultMessage="To learn more, go to the {previewFaqLink}."
-                        description="Scratch 3.0 FAQ description"
-                        id="gui.webglModal.previewfaq"
-                        values={{
-                            previewFaqLink: (
-                                <a
-                                    className={styles.faqLink}
-                                    href="//scratch.mit.edu/3faq"
-                                >
-                                    <FormattedMessage
-                                        defaultMessage="FAQ"
-                                        description="link to Scratch 3.0 FAQ page"
-                                        id="gui.webglModal.previewfaqlinktext"
-                                    />
-                                </a>
-                            )
-                        }}
-                    />
-                </div>
             </Box>
         </div>
     </ReactModal>

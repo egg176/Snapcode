@@ -2,10 +2,10 @@ import projectData from './project-data';
 
 /* eslint-disable import/no-unresolved */
 import popWav from '!arraybuffer-loader!./83a9787d4cb6f3b7632b4ddfebf74367.wav?';
-import meowWav from '!arraybuffer-loader!./83c36d806dc92327b9e7049a565c6bff.wav?';
+import blipWav from '!arraybuffer-loader!./2967fb2469373a037f3e41bb3f7b8632.wav?';
 import backdrop from '!raw-loader!./cd21514d0531fdffb22204e0ec5ed84a.svg?';
-import costume1 from '!raw-loader!./bcf454acf82e4504149f7ffe07081dbc.svg?';
-import costume2 from '!raw-loader!./0fb9be3e8397c983338cb71dc84d0b25.svg?';
+import costume1 from '!raw-loader!./690b8b215cf4be5aad4a6f96094f9e1f.svg?';
+import costume2 from '!raw-loader!./dea7e05d6680a7f379a154439e3a9c49.svg?';
 /* eslint-enable import/no-unresolved */
 
 const defaultProject = translator => {
@@ -29,22 +29,22 @@ const defaultProject = translator => {
         dataFormat: 'WAV',
         data: new Uint8Array(popWav)
     }, {
-        id: '83c36d806dc92327b9e7049a565c6bff',
+        id: '2967fb2469373a037f3e41bb3f7b8632',
         assetType: 'Sound',
         dataFormat: 'WAV',
-        data: new Uint8Array(meowWav)
+        data: new Uint8Array(blipWav)
     }, {
         id: 'cd21514d0531fdffb22204e0ec5ed84a',
         assetType: 'ImageVector',
         dataFormat: 'SVG',
         data: encoder.encode(backdrop)
     }, {
-        id: 'bcf454acf82e4504149f7ffe07081dbc',
+        id: '690b8b215cf4be5aad4a6f96094f9e1f',
         assetType: 'ImageVector',
         dataFormat: 'SVG',
         data: encoder.encode(costume1)
     }, {
-        id: '0fb9be3e8397c983338cb71dc84d0b25',
+        id: 'dea7e05d6680a7f379a154439e3a9c49',
         assetType: 'ImageVector',
         dataFormat: 'SVG',
         data: encoder.encode(costume2)

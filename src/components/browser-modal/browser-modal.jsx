@@ -43,13 +43,13 @@ const BrowserModal = ({intl, ...props}) => {
                         { /* eslint-disable max-len */ }
                         {
                             props.error ? <FormattedMessage
-                                defaultMessage="We are very sorry, but it looks like you are using a browser version that Scratch does not support. We recommend updating to the latest version of a supported browser such as Google Chrome, Mozilla Firefox, Microsoft Edge, or Apple Safari. "
+                                defaultMessage="We are very sorry, but it looks like you are using a browser version that Snapcode does not support. We recommend updating to the latest version of a supported browser such as Google Chrome, Mozilla Firefox, Microsoft Edge, or Apple Safari. "
                                 description="Error message when the browser does not meet our minimum requirements"
-                                id="gui.unsupportedBrowser.notRecommended"
+                                id="snapcode.unsupportedBrowser.notRecommended"
                             /> : <FormattedMessage
-                                defaultMessage="We are very sorry, but Scratch does not support this browser. We recommend updating to the latest version of a supported browser such as Google Chrome, Mozilla Firefox, Microsoft Edge, or Apple Safari."
+                                defaultMessage="We are very sorry, but Snapcode does not support this browser. We recommend updating to the latest version of a supported browser such as Google Chrome, Mozilla Firefox, Microsoft Edge, or Apple Safari."
                                 description="Error message when the browser does not work at all (IE)"
-                                id="gui.unsupportedBrowser.description"
+                                id="snapcode.unsupportedBrowser.description"
                             />
                         }
                         { /* eslint-enable max-len */ }
@@ -68,27 +68,6 @@ const BrowserModal = ({intl, ...props}) => {
                         </button>
 
                     </Box>
-                    <div className={styles.faqLinkText}>
-                        <FormattedMessage
-                            defaultMessage="To learn more, go to the {previewFaqLink}."
-                            description="Invitation to try 3.0 preview"
-                            id="gui.unsupportedBrowser.previewfaq"
-                            values={{
-                                previewFaqLink: (
-                                    <a
-                                        className={styles.faqLink}
-                                        href="//scratch.mit.edu/3faq"
-                                    >
-                                        <FormattedMessage
-                                            defaultMessage="FAQ"
-                                            description="link to Scratch 3.0 FAQ page"
-                                            id="gui.unsupportedBrowser.previewfaqlinktext"
-                                        />
-                                    </a>
-                                )
-                            }}
-                        />
-                    </div>
                 </Box>
             </div>
         </ReactModal>
