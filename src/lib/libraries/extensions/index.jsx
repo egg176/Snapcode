@@ -46,7 +46,32 @@ import gdxforInsetIconURL from './gdxfor/gdxfor-small.svg';
 import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
+import snapcodeToolsIconURL from './snapcode/snapcode-tools.svg';
+import snapcodeToolsInsetIconURL from './snapcode/snapcode-tools-small.svg';
+
 export default [
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Snapcode Tools"
+                description="Name for the 'Snapcode Tools' extension"
+                id="snapcode.extension.snapcodeTools.name"
+            />
+        ),
+        extensionId: 'snapcodeTools',
+        // loaded in the extension worker, which resolves this relative to the site root
+        extensionURL: 'static/snapcode/snapcode-tools.js',
+        iconURL: snapcodeToolsIconURL,
+        insetIconURL: snapcodeToolsInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Text tools, random colors and the clock. Made for Snapcode."
+                description="Description for the 'Snapcode Tools' extension"
+                id="snapcode.extension.snapcodeTools.description"
+            />
+        ),
+        featured: true
+    },
     {
         name: (
             <FormattedMessage
