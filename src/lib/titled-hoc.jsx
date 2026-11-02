@@ -11,9 +11,9 @@ import {setProjectTitle} from '../reducers/project-title';
 
 const messages = defineMessages({
     defaultProjectTitle: {
-        id: 'gui.gui.defaultProjectTitle',
+        id: 'snapcode.defaultProjectTitle',
         description: 'Default title for project',
-        defaultMessage: 'Scratch Project'
+        defaultMessage: 'Snapcode Project'
     }
 });
 

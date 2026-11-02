@@ -23,6 +23,19 @@ npm run build    # production build into ./build
 `vercel.json` already sets the install command, build command and output directory (`build`).
 Import this repository in Vercel and deploy with the defaults.
 
+### Custom domain
+
+In Vercel: Project, Settings, Domains, add your domain, then set the DNS records Vercel shows
+(an `A` record for the apex domain or a `CNAME` for a subdomain). After the domain works, change
+the `og:image` tag in `src/playground/index.ejs` to the full URL (for example
+`https://your-domain.com/static/og-image.png`) so link previews show the image on social sites.
+
+## Project layout (Snapcode additions)
+
+- `src/lib/snapcode-config.js`: app name, source-code link, feature switches
+- `static/snapcode/snapcode-tools.js`: the bundled "Snapcode Tools" extension
+- `src/lib/default-project/`: the starter project (Snappy sprite and Blip sound)
+
 ## License
 
 Snapcode is licensed under the [GNU Affero General Public License v3.0](./LICENSE),
