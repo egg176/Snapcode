@@ -113,13 +113,19 @@
     width: 100%;
 }
 
-.suggestions span {
+.suggestions button {
     padding: 0.65rem 0.75rem;
     border: 1px solid #e8e3f6;
     border-radius: 0.7rem;
+    background: #fff;
     color: #554a83;
     font-size: 0.78rem;
     text-align: left;
+    cursor: pointer;
+}
+
+.suggestions button:hover {
+    background: #f7f5ff;
 }
 
 .messageList {
@@ -129,23 +135,36 @@
     gap: 0.8rem;
 }
 
-.userMessage {
-    max-width: 88%;
+.userMessage, .assistantMessage {
+    max-width: 90%;
     padding: 0.7rem 0.85rem;
-    border-radius: 0.9rem 0.9rem 0.2rem 0.9rem;
-    background: #6c52d9;
-    color: #fff;
+    border-radius: 0.9rem;
     font-size: 0.85rem;
-    line-height: 1.45;
+    line-height: 1.5;
+    white-space: pre-wrap;
     overflow-wrap: anywhere;
 }
 
-.setupNotice {
-    align-self: stretch;
-    padding: 0.75rem;
+.userMessage {
+    align-self: flex-end;
+    border-bottom-right-radius: 0.2rem;
+    background: #6c52d9;
+    color: #fff;
+}
+
+.assistantMessage {
+    align-self: flex-start;
+    border-bottom-left-radius: 0.2rem;
+    background: #f2effa;
+    color: #302b43;
+}
+
+.error {
+    margin-top: 0.75rem;
+    padding: 0.7rem;
     border-radius: 0.7rem;
-    background: #f6f4fb;
-    color: #6f6982;
+    background: #fff1f0;
+    color: #9d3028;
     font-size: 0.76rem;
     line-height: 1.45;
 }
@@ -171,6 +190,10 @@
 
 .input::placeholder {
     color: #aaa5b9;
+}
+
+.input:disabled {
+    opacity: 0.6;
 }
 
 .composerFooter {
