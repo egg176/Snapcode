@@ -317,3 +317,39 @@ $fade-out-distance: 15px;
 :global(.ReactModal__Body--open) {
     overflow: hidden;
 }
+
+
+/* Snapcode AI chat entry point and side panel */
+.ai-chat-toggle {
+    position: fixed;
+    top: 0.45rem;
+    right: 1rem;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 2.25rem;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 1.25rem;
+    background: linear-gradient(135deg, #7657e8, #5540bd);
+    color: #fff;
+    font: 600 0.85rem "Helvetica Neue", Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(38, 25, 91, 0.25);
+}
+
+.ai-chat-toggle:hover {
+    filter: brightness(1.08);
+}
+
+.ai-chat-toggle:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.ai-chat-sparkle {
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
