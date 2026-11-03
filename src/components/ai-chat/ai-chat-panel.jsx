@@ -98,7 +98,7 @@ class AIChatPanel extends React.Component {
                                     key={message.id}
                                 >
                                     {message.provider === 'groq' ? (
-                                        <div className={styles.providerNotice}>Switched to backup AI · Groq</div>
+                                        <div className={styles.providerNotice}>Using backup AI · Groq</div>
                                     ) : null}
                                     {message.text}
                                 </div>
