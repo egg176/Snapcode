@@ -47,7 +47,8 @@ class AIChatPanel extends React.Component {
                 messages: state.messages.concat([{
                     id: Date.now() + 1,
                     role: 'assistant',
-                    text: result.text
+                    text: result.text,
+                    provider: result.provider
                 }]),
                 isSending: false
             }));
@@ -67,7 +68,7 @@ class AIChatPanel extends React.Component {
                         <span className={styles.sparkle}>✦</span>
                         <div>
                             <div className={styles.title}>Snapcode AI</div>
-                            <div className={styles.subtitle}>Gemini 3.8 Flash</div>
+                            <div className={styles.subtitle}>Gemini primary · Groq backup</div>
                         </div>
                     </div>
                     <button
@@ -96,6 +97,9 @@ class AIChatPanel extends React.Component {
                                     className={message.role === 'user' ? styles.userMessage : styles.assistantMessage}
                                     key={message.id}
                                 >
+                                    {message.provider === 'groq' ? (
+                                        <div className={styles.providerNotice}>Switched to backup AI · Groq</div>
+                                    ) : null}
                                     {message.text}
                                 </div>
                             ))}
@@ -125,7 +129,7 @@ class AIChatPanel extends React.Component {
                         value={this.state.draft}
                     />
                     <div className={styles.composerFooter}>
-                        <span className={styles.hint}>Powered by Google Gemini</span>
+                        <span className={styles.hint}>Gemini primary · Groq backup</span>
                         <button
                             aria-label="Send message"
                             className={styles.send}
