@@ -41,6 +41,7 @@ import codeIcon from './icon--code.svg';
 import costumesIcon from './icon--costumes.svg';
 import soundsIcon from './icon--sounds.svg';
 import DebugModal from '../debug-modal/debug-modal.jsx';
+import AIChatPanel from '../ai-chat/ai-chat-panel.jsx';
 
 const messages = defineMessages({
     addExtension: {
@@ -55,6 +56,7 @@ const messages = defineMessages({
 let isRendererSupported = null;
 
 const GUIComponent = props => {
+    const [isAIChatOpen, setIsAIChatOpen] = React.useState(false);
     const {
         accountNavOpen,
         activeTabIndex,
@@ -251,6 +253,19 @@ const GUIComponent = props => {
                     onStartSelectingFileUpload={onStartSelectingFileUpload}
                     onToggleLoginOpen={onToggleLoginOpen}
                 />
+                <button
+                    aria-label="Open AI chat"
+                    aria-expanded={isAIChatOpen}
+                    className={styles.aiChatToggle}
+                    onClick={() => setIsAIChatOpen(!isAIChatOpen)}
+                    type="button"
+                >
+                    <span className={styles.aiChatSparkle}>✦</span>
+                    <span>AI</span>
+                </button>
+                {isAIChatOpen ? (
+                    <AIChatPanel onClose={() => setIsAIChatOpen(false)} />
+                ) : null}
                 <Box className={styles.bodyWrapper}>
                     <Box className={styles.flexWrapper}>
                         <Box className={styles.editorWrapper}>
