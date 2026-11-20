@@ -112,6 +112,7 @@ const buildConfig = baseConfig.clone()
     .enableDevServer(process.env.PORT || 8601)
     .merge({
         entry: {
+            home: './src/playground/home.jsx',
             gui: './src/playground/index.jsx',
             blocksonly: './src/playground/blocks-only.jsx',
             compatibilitytesting: './src/playground/compatibility-testing.jsx',
@@ -121,6 +122,13 @@ const buildConfig = baseConfig.clone()
             path: path.resolve(__dirname, 'build')
         }
     })
+    .addPlugin(new HtmlWebpackPlugin({
+        ...commonHtmlWebpackPluginOptions,
+        chunks: ['home'],
+        filename: 'home.html',
+        template: 'src/playground/index.ejs',
+        title: 'Snapcode — Create anything'
+    }))
     .addPlugin(new HtmlWebpackPlugin({
         ...commonHtmlWebpackPluginOptions,
         chunks: ['gui'],
