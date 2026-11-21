@@ -125,13 +125,14 @@ const buildConfig = baseConfig.clone()
     .addPlugin(new HtmlWebpackPlugin({
         ...commonHtmlWebpackPluginOptions,
         chunks: ['home'],
-        filename: 'home.html',
+        filename: 'index.html',
         template: 'src/playground/index.ejs',
         title: 'Snapcode — Create anything'
     }))
     .addPlugin(new HtmlWebpackPlugin({
         ...commonHtmlWebpackPluginOptions,
         chunks: ['gui'],
+        filename: 'editor.html',
         template: 'src/playground/index.ejs',
         title: 'Snapcode'
     }))
