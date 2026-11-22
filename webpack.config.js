@@ -132,6 +132,13 @@ const buildConfig = baseConfig.clone()
     }))
     .addPlugin(new HtmlWebpackPlugin({
         ...commonHtmlWebpackPluginOptions,
+        chunks: ['extensionsstore'],
+        filename: 'extensions.html',
+        template: 'src/playground/extensions.ejs',
+        title: 'Snapcode Extension Store'
+    }))
+    .addPlugin(new HtmlWebpackPlugin({
+        ...commonHtmlWebpackPluginOptions,
         chunks: ['gui'],
         filename: 'editor.html',
         template: 'src/playground/index.ejs',
