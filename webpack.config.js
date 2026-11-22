@@ -112,7 +112,8 @@ const buildConfig = baseConfig.clone()
     .enableDevServer(process.env.PORT || 8601)
     .merge({
         entry: {
-            home: './src/playground/home.jsx',\n            extensionsstore: './src/playground/extensions-store.jsx',
+            home: './src/playground/home.jsx',
+            extensionsstore: './src/playground/extensions-store.jsx',
             gui: './src/playground/index.jsx',
             blocksonly: './src/playground/blocks-only.jsx',
             compatibilitytesting: './src/playground/compatibility-testing.jsx',
