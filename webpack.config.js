@@ -114,6 +114,7 @@ const buildConfig = baseConfig.clone()
         entry: {
             home: './src/playground/home.jsx',
             extensionsstore: './src/playground/extensions-store.jsx',
+            account: './src/playground/account.jsx',
             gui: './src/playground/index.jsx',
             blocksonly: './src/playground/blocks-only.jsx',
             compatibilitytesting: './src/playground/compatibility-testing.jsx',
@@ -136,6 +137,13 @@ const buildConfig = baseConfig.clone()
         filename: 'extensions.html',
         template: 'src/playground/extensions.ejs',
         title: 'Snapcode Extension Store'
+    }))
+    .addPlugin(new HtmlWebpackPlugin({
+        ...commonHtmlWebpackPluginOptions,
+        chunks: ['account'],
+        filename: 'account.html',
+        template: 'src/playground/account.ejs',
+        title: 'Snapcode Account'
     }))
     .addPlugin(new HtmlWebpackPlugin({
         ...commonHtmlWebpackPluginOptions,
