@@ -17,5 +17,48 @@ function Home(){
  const [transition,setTransition]=useState(false);
  useEffect(()=>{const timer=setTimeout(()=>setLoading(false),750);return()=>clearTimeout(timer)},[]);
  const navigate=(e)=>{const link=e.target.closest('a');if(!link||link.target||link.href.startsWith(window.location.origin+'#')||link.href===window.location.href)return;if(link.href.startsWith(window.location.origin)){e.preventDefault();setTransition(true);setTimeout(()=>window.location.href=link.href,350)}};
- return <><style>{styles}</style><div className={'loading '+(loading?'':'hide')} aria-label="Loading Snapcode"><div className="loading-logo">✦ Snapcode</div><div className="loader"/></div>{transition&&<div className="transition"/>}<div onClick={navigate}><nav><a className="nav-brand" href="index.html">✦ Snapcode</a><a className="store-link" href="extensions.html">Extension Store</a><input className="nav-search" placeholder="Search projects..." aria-label="Search projects"/><a className="accountnav" href="account.html" style={{textDecoration:'none'}}>☺ Account</a></nav><main><section className="hero"><div className="hero-copy"><div className="eyebrow">Ideas become interactive</div><h1>Make something<br/><span>awesome.</span></h1><p>Bring your ideas to life with blocks. Create games, animations, stories and more — one block at a time.</p><div className="actions"><a className="btn primary" href="editor.html">Start creating →</a><a className="btn secondary" href="#features">Explore</a></div></div><div className="preview"><div className="window"><div className="dots"><i className="dot"/><i className="dot"/><i className="dot"/></div><div className="blocks"><div className="block yellow">when green flag clicked</div><div className="block blue">move 10 steps</div><div className="block purple">say Hello! for 2 seconds</div><div className="block green">repeat 10</div></div></div></section><section className="features" id="features"><div className="feature"><div>🧩</div><h3>Simple building blocks</h3><p>Combine colorful blocks to build your ideas.</p></div><div className="feature"><div>🎨</div><h3>Make it your own</h3><p>Dream up characters, worlds and stories.</p></div><div className="feature"><div>🚀</div><h3>Explore and experiment</h3><p>Try things out and see what you can create.</p></div></section></main></div></>; }
+ return (
+ <>
+  <style>{styles}</style>
+  <div className={'loading '+(loading?'':'hide')} aria-label="Loading Snapcode">
+   <div className="loading-logo">✦ Snapcode</div><div className="loader"/>
+  </div>
+  {transition && <div className="transition"/>}
+  <div onClick={navigate}>
+   <nav>
+    <a className="nav-brand" href="index.html">✦ Snapcode</a>
+    <a className="store-link" href="extensions.html">Extension Store</a>
+    <input className="nav-search" placeholder="Search projects..." aria-label="Search projects"/>
+    <a className="accountnav" href="account.html" style={{textDecoration:'none'}}>☺ Account</a>
+   </nav>
+   <main>
+    <section className="hero">
+     <div className="hero-copy">
+      <div className="eyebrow">Ideas become interactive</div>
+      <h1>Make something<br/><span>awesome.</span></h1>
+      <p>Bring your ideas to life with blocks. Create games, animations, stories and more — one block at a time.</p>
+      <div className="actions"><a className="btn primary" href="editor.html">Start creating →</a><a className="btn secondary" href="#features">Explore</a></div>
+     </div>
+     <div className="preview">
+      <div className="window">
+       <div className="dots"><i className="dot"/><i className="dot"/><i className="dot"/></div>
+       <div className="blocks">
+        <div className="block yellow">when green flag clicked</div>
+        <div className="block blue">move 10 steps</div>
+        <div className="block purple">say Hello! for 2 seconds</div>
+        <div className="block green">repeat 10</div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section className="features" id="features">
+     <div className="feature"><div>🧩</div><h3>Simple building blocks</h3><p>Combine colorful blocks to build your ideas.</p></div>
+     <div className="feature"><div>🎨</div><h3>Make it your own</h3><p>Dream up characters, worlds and stories.</p></div>
+     <div className="feature"><div>🚀</div><h3>Explore and experiment</h3><p>Try things out and see what you can create.</p></div>
+    </section>
+   </main>
+  </div>
+ </>
+ );
+}
 ReactDOM.render(<Home/>,document.getElementById('home'));
