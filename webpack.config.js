@@ -155,6 +155,13 @@ const buildConfig = baseConfig.clone()
     }))
     .addPlugin(new HtmlWebpackPlugin({
         ...commonHtmlWebpackPluginOptions,
+        chunks: ['profile'],
+        filename: 'profile.html',
+        template: 'src/playground/profile.ejs',
+        title: 'Snapcode Profile'
+    }))
+    .addPlugin(new HtmlWebpackPlugin({
+        ...commonHtmlWebpackPluginOptions,
         chunks: ['gui'],
         filename: 'editor.html',
         template: 'src/playground/index.ejs',
