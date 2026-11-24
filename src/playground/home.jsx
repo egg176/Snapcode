@@ -27,7 +27,7 @@ function Home(){
   <div onClick={navigate}>
    <nav>
     <a className="nav-brand" href="index.html">✦ Snapcode</a>
-    <a className="store-link" href="extensions.html">Extension Store</a>
+    <a className="store-link" href="extensions.html">Extension Store</a><a className="store-link" href="explore.html">Explore</a>
     <input className="nav-search" placeholder="Search projects..." aria-label="Search projects"/>
     <a className="accountnav" href="account.html" style={{textDecoration:'none'}}>☺ Account</a>
    </nav>
@@ -37,7 +37,7 @@ function Home(){
       <div className="eyebrow">Ideas become interactive</div>
       <h1>Make something<br/><span>awesome.</span></h1>
       <p>Bring your ideas to life with blocks. Create games, animations, stories and more — one block at a time.</p>
-      <div className="actions"><a className="btn primary" href="editor.html">Start creating →</a><a className="btn secondary" href="#features">Explore</a></div>
+      <div className="actions"><a className="btn primary" href="editor.html">Start creating →</a><a className="btn secondary" href="explore.html">Explore projects</a></div>
      </div>
      <div className="preview">
       <div className="window">
