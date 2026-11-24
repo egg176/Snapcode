@@ -112,7 +112,8 @@ const buildConfig = baseConfig.clone()
     .enableDevServer(process.env.PORT || 8601)
     .merge({
         entry: {
-            home: './src/playground/home.jsx',\n            explore: './src/playground/explore.jsx',
+            home: './src/playground/home.jsx',
+            explore: './src/playground/explore.jsx',
             extensionsstore: './src/playground/extensions-store.jsx',
             account: './src/playground/account.jsx',
             gui: './src/playground/index.jsx',
@@ -124,6 +125,13 @@ const buildConfig = baseConfig.clone()
             path: path.resolve(__dirname, 'build')
         }
     })
+    .addPlugin(new HtmlWebpackPlugin({
+        ...commonHtmlWebpackPluginOptions,
+        chunks: ['explore'],
+        filename: 'explore.html',
+        template: 'src/playground/explore.ejs',
+        title: 'Snapcode Explore'
+    }))
     .addPlugin(new HtmlWebpackPlugin({
         ...commonHtmlWebpackPluginOptions,
         chunks: ['home'],
