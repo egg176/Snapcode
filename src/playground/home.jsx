@@ -29,7 +29,7 @@ function Home(){
     <a className="nav-brand" href="index.html">✦ Snapcode</a>
     <a className="store-link" href="extensions.html">Extension Store</a><a className="store-link" href="explore.html">Explore</a>
     <input className="nav-search" placeholder="Search projects..." aria-label="Search projects"/>
-    <a className="accountnav" href="account.html" style={{textDecoration:'none'}}>☺ Account</a>
+    <a className="accountnav" href="profile.html" aria-label="Profile" title="Profile" style={{textDecoration:'none'}}>👤</a>
    </nav>
    <main>
     <section className="hero">
