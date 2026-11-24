@@ -115,7 +115,7 @@ const buildConfig = baseConfig.clone()
             home: './src/playground/home.jsx',
             explore: './src/playground/explore.jsx',
             extensionsstore: './src/playground/extensions-store.jsx',
-            account: './src/playground/account.jsx',
+            account: './src/playground/account.jsx',\n            profile: './src/playground/profile.jsx',
             gui: './src/playground/index.jsx',
             blocksonly: './src/playground/blocks-only.jsx',
             compatibilitytesting: './src/playground/compatibility-testing.jsx',
