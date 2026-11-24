@@ -29,7 +29,7 @@ function Home(){
     <a className="nav-brand" href="index.html">✦ Snapcode</a>
     <a className="store-link" href="extensions.html">Extension Store</a><a className="store-link" href="explore.html">Explore</a>
     <input className="nav-search" placeholder="Search projects..." aria-label="Search projects"/>
-    <a className="accountnav" href="profile.html" aria-label="Profile" title="Profile" style={{textDecoration:'none'}}>👤</a>
+    <a className="accountnav" href="profile.html" aria-label="Profile" title="Profile" style={{textDecoration:'none',display:'flex',alignItems:'center',gap:9}}>👤 {(()=>{try{const s=JSON.parse(sessionStorage.getItem('snapcode_session')||'null');const u=s?.user;return u?.user_metadata?.username||u?.email?.split('@')[0]||''}catch(e){return ''}})()}</a>
    </nav>
    <main>
     <section className="hero">
